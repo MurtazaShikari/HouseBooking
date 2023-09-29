@@ -16,6 +16,7 @@ import Input from "../inputs/Input";
 import { toast } from "react-hot-toast";
 import Button from "../Button";
 import { useRouter } from "next/navigation";
+import { sign } from "crypto";
 
 const LoginModal = () => {
   const router = useRouter();
@@ -81,7 +82,7 @@ const LoginModal = () => {
         outline
         label="Continue with Google"
         icon={FcGoogle}
-        onClick={() => {}}
+        onClick={() => signIn("google")}
       />
       <Button
         outline
