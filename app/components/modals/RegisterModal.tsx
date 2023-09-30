@@ -45,10 +45,12 @@ const RegisterModal = () => {
         setIsLoading(false);
       });
   };
+
   const toggle = useCallback(() => {
     loginModal.onOpen();
     registerModal.onClose();
   }, [loginModal, registerModal]);
+
   const bodyContent = (
     <div className="flex flex-col gap-4">
       <Heading title="Welcome to Airbnb" subtitle="Create an account!" />
