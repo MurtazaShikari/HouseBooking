@@ -25,77 +25,77 @@ import {
 export const categories = [
   {
     label: "Beach",
-    Icon: TbBeach,
+    icon: TbBeach,
     description: "This property is closed to the beach",
   },
   {
     label: "Windmills",
-    Icon: GiWindmill,
+    icon: GiWindmill,
     description: "This property is has windimlls",
   },
   {
     label: "Modern",
-    Icon: MdOutlineVilla,
+    icon: MdOutlineVilla,
     description: "This property is modern",
   },
   {
     label: "Countryside",
-    Icon: TbMountain,
+    icon: TbMountain,
     description: "This property is in the countryside!",
   },
   {
     label: "Pools",
-    Icon: TbPool,
+    icon: TbPool,
     description: "This property has a pool",
   },
   {
     label: "Islands",
-    Icon: GiIsland,
+    icon: GiIsland,
     description: "This property is on an island",
   },
   {
     label: "Lake",
-    Icon: GiBoatFishing,
+    icon: GiBoatFishing,
     description: "This property is close to a lake",
   },
   {
     label: "Skiing",
-    Icon: FaSkiing,
+    icon: FaSkiing,
     description: "This property has skiing activities",
   },
   {
     label: "Castles",
-    Icon: GiCastle,
+    icon: GiCastle,
     description: "This property is in a castle",
   },
   {
     label: "Camping",
-    Icon: GiForestCamp,
+    icon: GiForestCamp,
     description: "This property has camping activities",
   },
   {
     label: "Artic",
-    Icon: BsSnow,
+    icon: BsSnow,
     description: "This property is in the arctic",
   },
   {
     label: "Cave",
-    Icon: GiCaveEntrance,
+    icon: GiCaveEntrance,
     description: "This property is in a cave",
   },
   {
     label: "Desert",
-    Icon: GiCactus,
+    icon: GiCactus,
     description: "This property is in the desert",
   },
   {
     label: "Barn",
-    Icon: GiBarn,
+    icon: GiBarn,
     description: "This property is in the barn",
   },
   {
     label: "Lux",
-    Icon: IoDiamond,
+    icon: IoDiamond,
     description: "This property is luxurious",
   },
 ];
@@ -124,7 +124,7 @@ const Categories = () => {
             key={item.label}
             label={item.label}
             selected={category === item.label}
-            icon={item.Icon}
+            icon={item.icon}
           />
         ))}
       </div>
