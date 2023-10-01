@@ -4,8 +4,8 @@ import { categories } from "@/app/components/navbar/Categories";
 import { SafeListing, SafeUser } from "@/app/types";
 import { Reservation } from "@prisma/client";
 import React, { useMemo } from "react";
-import ListingHead from "./ListingHead";
-import ListingInfo from "./ListingInfo";
+import ListingHead from "../../components/listings/ListingHead";
+import ListingInfo from "../../components/listings/ListingInfo";
 
 interface ListingClientProps {
   reservations?: Reservation[];
