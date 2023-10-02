@@ -1,14 +1,14 @@
 "use client";
 
 import React from "react";
-import { DateRange, Range } from "react-date-range";
+import { DateRange, Range, RangeKeyDict } from "react-date-range";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 
 interface CalendarProps {
   value: Range;
   disabledDates?: Date[];
-  onChange: (value: Range) => void;
+  onChange: (value: RangeKeyDict) => void;
 }
 
 const Calendar: React.FC<CalendarProps> = ({
@@ -21,7 +21,7 @@ const Calendar: React.FC<CalendarProps> = ({
       rangeColors={["#262626"]}
       ranges={[value]}
       date={new Date()}
-      onChange={onchange}
+      onChange={onChange}
       direction="vertical"
       showDateDisplay={false}
       minDate={new Date()}

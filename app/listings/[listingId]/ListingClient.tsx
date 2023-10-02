@@ -8,10 +8,15 @@ import ListingHead from "../../components/listings/ListingHead";
 import ListingInfo from "../../components/listings/ListingInfo";
 import useLoginModal from "@/app/hooks/useLoginModal";
 import { useRouter } from "next/navigation";
-import { differenceInCalendarDays, eachDayOfInterval } from "date-fns";
+import {
+  differenceInBusinessDays,
+  differenceInDays,
+  eachDayOfInterval,
+} from "date-fns";
 import axios from "axios";
 import toast from "react-hot-toast";
 import ListingReservation from "@/app/components/listings/ListingReservation";
+import { Range } from "react-date-range";
 
 const initialDateRange = {
   startDate: new Date(),
@@ -50,7 +55,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
 
   const [isLoading, setIsLoading] = useState(false);
   const [totalPrice, setTotalPrice] = useState(listing.price);
-  const [dateRange, setDateRange] = useState(initialDateRange);
+  const [dateRange, setDateRange] = useState<Range>(initialDateRange);
 
   const onCreateReservation = useCallback(() => {
     if (!currentUser) {
@@ -79,9 +84,9 @@ const ListingClient: React.FC<ListingClientProps> = ({
 
   useEffect(() => {
     if (dateRange.startDate && dateRange.endDate) {
-      const dayCount = differenceInCalendarDays(
-        dateRange.startDate,
-        dateRange.endDate
+      const dayCount = differenceInBusinessDays(
+        dateRange.endDate,
+        dateRange.startDate
       );
       if (dayCount && listing.price) {
         setTotalPrice(dayCount * listing.price);
@@ -126,11 +131,11 @@ const ListingClient: React.FC<ListingClientProps> = ({
               <ListingReservation
                 price={listing.price}
                 totalPrice={totalPrice}
-                onChangeDate={(value) => setDateRange(value)}
+                onChange={(value) => setDateRange(value)}
                 dateRange={dateRange}
                 onSubmit={onCreateReservation}
                 disabled={isLoading}
-                disableDates={disableDates}
+                disabledDates={disableDates}
               />
             </div>
           </div>
