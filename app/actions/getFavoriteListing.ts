@@ -1,7 +1,6 @@
 import prisma from "@/app/libs/prismadb";
 
 import getCurrentUser from "./getCurrentUser";
-import ListingCard from "../components/listings/ListingCard";
 
 export default async function getFavoriteListing() {
   try {
