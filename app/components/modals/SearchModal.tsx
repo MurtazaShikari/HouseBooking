@@ -128,7 +128,7 @@ const SearchModal = () => {
     </div>
   );
 
-  if (step === STEPS.INFO) {
+  if (step === STEPS.DATE) {
     bodyContent = (
       <div className="flex  flex-col gap-8">
         <Heading
