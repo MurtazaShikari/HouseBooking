@@ -32,14 +32,14 @@ const Search = () => {
       if (diff === 0) {
         diff = 1;
       }
-      return `${diff} Days`;
+      return diff === 1 ? `${diff} Day` : `${diff} Days`;
     }
     return "Any Week";
   }, [startDate, endDate]);
 
   const guestLabel = useMemo(() => {
     if (guestCount) {
-      return `${guestCount} Guests`;
+      return `${guestCount} Guest`;
     }
     return "Add Guests";
   }, [guestCount]);
