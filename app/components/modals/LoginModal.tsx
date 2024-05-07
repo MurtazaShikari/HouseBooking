@@ -104,7 +104,7 @@ const LoginModal = () => {
           <div
             onClick={toggle}
             className="
-          text-neutral-500
+          text-rose-500
           cursor-pointer
           hover:underline
           "
